@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using Plugin.Maui.ScreenSecurity;
 
 namespace MauiScreenSecuritySample;
 
@@ -14,6 +15,9 @@ public static class MauiProgram
 				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
 			});
+
+		// If you use DI, use this
+		//builder.Services.AddSingleton<IScreenSecurity>(ScreenSecurity.Default);
 
 #if DEBUG
 		builder.Logging.AddDebug();
